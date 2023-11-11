@@ -20,7 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup and run tests
-        working-directory: ./backend
+      - working-directory: ./backend
+      - run: npm test
 
       - uses: sonarsource/sonarqube-scan-action@master
         env:
