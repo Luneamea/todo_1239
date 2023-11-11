@@ -1,0 +1,13 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup
+        working-directory: ./backend
+        run: npm install
+      - name: Test
+        working-directory: ./backend
+        run: npm test
